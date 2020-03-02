@@ -3,4 +3,4 @@
 TCD Group 8 for Information Retrieval.
 
 
-This project uses Travis-CI.
+This project uses Intellij Workspace with Maven configured and Travis-CI.
