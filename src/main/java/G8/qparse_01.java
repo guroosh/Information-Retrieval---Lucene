@@ -33,10 +33,6 @@ public class qparse_01 {
 
     public qparse_01() {}
 
-    public static void main(String[] args) throws IOException {
-
-    }
-
         public void firstParseQuery(String queries, PrintWriter wrt) throws IOException {
 
             String nextLine = null;
