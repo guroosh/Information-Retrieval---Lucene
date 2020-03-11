@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="29087573-7e92-4934-9c47-7efef43076e4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/G8/g8app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/G8/g8app.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/G8/qparse_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/G8/qparse_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/final_query.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/G8/g8app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/G8/g8app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/G8/qparse_01.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/G8/qparse_01.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/G8/qparse_02.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/G8/qparse_02.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +23,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1YZTr0815KlnEQHDZQfw3GqPfvn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -36,6 +45,19 @@
     <property name="settings.editor.selected.configurable" value="experimental" />
   </component>
   <component name="RunManager" selected="Application.g8app">
+    <configuration name="Indexer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="G8.Indexer" />
+      <module name="IRG8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="G8.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="g8app" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="G8.g8app" />
       <module name="IRG8" />
@@ -80,10 +102,12 @@
       <item itemvalue="Application.g8app" />
       <item itemvalue="Application.qparse_01" />
       <item itemvalue="Application.qparse_02" />
+      <item itemvalue="Application.Indexer" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.g8app" />
+        <item itemvalue="Application.Indexer" />
         <item itemvalue="Application.qparse_02" />
         <item itemvalue="Application.qparse_01" />
       </list>
@@ -119,30 +143,31 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="584" y="295" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1583787263910" />
-    <state width="1750" height="325" key="GridCell.Tab.0.bottom" timestamp="1583954519742">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state width="1750" height="325" key="GridCell.Tab.0.bottom" timestamp="1583958266130">
+      <screen x="0" y="23" width="1792" height="1032" />
     </state>
     <state width="1523" height="392" key="GridCell.Tab.0.bottom/0.0.1792.1120/-417.-1440.2560.1440@-417.-1440.2560.1440" timestamp="1583868528414" />
-    <state width="1750" height="325" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1583954519742" />
-    <state width="1750" height="325" key="GridCell.Tab.0.bottom/0.23.1792.1032@0.23.1792.1032" timestamp="1583954429971" />
-    <state width="1750" height="325" key="GridCell.Tab.0.center" timestamp="1583954519741">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state width="1750" height="325" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1583958020518" />
+    <state width="1750" height="325" key="GridCell.Tab.0.bottom/0.23.1792.1032@0.23.1792.1032" timestamp="1583958266130" />
+    <state width="1750" height="325" key="GridCell.Tab.0.center" timestamp="1583958266128">
+      <screen x="0" y="23" width="1792" height="1032" />
     </state>
     <state width="1523" height="392" key="GridCell.Tab.0.center/0.0.1792.1120/-417.-1440.2560.1440@-417.-1440.2560.1440" timestamp="1583868528411" />
-    <state width="1750" height="325" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1583954519741" />
-    <state width="1750" height="325" key="GridCell.Tab.0.center/0.23.1792.1032@0.23.1792.1032" timestamp="1583954429968" />
-    <state width="1750" height="325" key="GridCell.Tab.0.left" timestamp="1583954519741">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state width="1750" height="325" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1583958020517" />
+    <state width="1750" height="325" key="GridCell.Tab.0.center/0.23.1792.1032@0.23.1792.1032" timestamp="1583958266128" />
+    <state width="1750" height="325" key="GridCell.Tab.0.left" timestamp="1583958266126">
+      <screen x="0" y="23" width="1792" height="1032" />
     </state>
     <state width="1523" height="392" key="GridCell.Tab.0.left/0.0.1792.1120/-417.-1440.2560.1440@-417.-1440.2560.1440" timestamp="1583868528409" />
-    <state width="1750" height="325" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1583954519741" />
+    <state width="1750" height="325" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1583958020516" />
+    <state width="1750" height="325" key="GridCell.Tab.0.left/0.0.1792.1120@0.23.1792.1032" timestamp="1583958266126" />
     <state width="1750" height="325" key="GridCell.Tab.0.left/0.23.1792.1032@0.23.1792.1032" timestamp="1583954429965" />
-    <state width="1750" height="325" key="GridCell.Tab.0.right" timestamp="1583954519742">
-      <screen x="0" y="0" width="1792" height="1120" />
+    <state width="1750" height="325" key="GridCell.Tab.0.right" timestamp="1583958266129">
+      <screen x="0" y="23" width="1792" height="1032" />
     </state>
     <state width="1523" height="392" key="GridCell.Tab.0.right/0.0.1792.1120/-417.-1440.2560.1440@-417.-1440.2560.1440" timestamp="1583868528413" />
-    <state width="1750" height="325" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1583954519742" />
-    <state width="1750" height="325" key="GridCell.Tab.0.right/0.23.1792.1032@0.23.1792.1032" timestamp="1583954429969" />
+    <state width="1750" height="325" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1583958020517" />
+    <state width="1750" height="325" key="GridCell.Tab.0.right/0.23.1792.1032@0.23.1792.1032" timestamp="1583958266129" />
     <state width="1398" height="391" key="GridCell.Tab.1.bottom" timestamp="1583878222381">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
