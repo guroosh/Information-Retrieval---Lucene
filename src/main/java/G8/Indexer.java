@@ -278,6 +278,32 @@ public class Indexer {
         }
     }
 
+    // add buildAllIndex method, it is the same as the main method blow, just more convenient for other classes
+    public static void buildAllIndex()throws IOException, ParserConfigurationException, SAXException{
+        System.out.println("Deleting old index");
+        deleteOldIndex();
+        FSDirectory dir = FSDirectory.open(Paths.get("index/"));
+        IndexWriterConfig config = new IndexWriterConfig(new StandardAnalyzer());
+//        IndexWriterConfig config = new IndexWriterConfig(new MyAnalyzer());
+        config.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
+        indexWriter = new IndexWriter(dir, config);
+
+        bw = new BufferedWriter(new FileWriter(new File("testFile.txt")));
+
+        System.out.println("Starting LATimes");
+        indexLATimes();
+        System.out.println("Starting FT");
+        indexFT();
+        System.out.println("Starting FR94");
+        indexFR94();
+        System.out.println("Starting FBIS");
+        indexFBIS();
+
+        bw.close();
+        indexWriter.close();
+        System.out.println("Index created");
+    }
+
     public static void main(String args[]) throws IOException, ParserConfigurationException, SAXException {
         System.out.println("Deleting old index");
         deleteOldIndex();
