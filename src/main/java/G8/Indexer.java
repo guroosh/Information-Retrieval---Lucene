@@ -1,6 +1,7 @@
 package G8;
 
 
+import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.StringField;
@@ -283,7 +284,7 @@ public class Indexer {
         System.out.println("Deleting old index");
         deleteOldIndex();
         FSDirectory dir = FSDirectory.open(Paths.get("index/"));
-        IndexWriterConfig config = new IndexWriterConfig(new StandardAnalyzer());
+        IndexWriterConfig config = new IndexWriterConfig(new EnglishAnalyzer());
 //        IndexWriterConfig config = new IndexWriterConfig(new MyAnalyzer());
         config.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
         indexWriter = new IndexWriter(dir, config);
@@ -308,7 +309,7 @@ public class Indexer {
         System.out.println("Deleting old index");
         deleteOldIndex();
         FSDirectory dir = FSDirectory.open(Paths.get("index/"));
-        IndexWriterConfig config = new IndexWriterConfig(new StandardAnalyzer());
+        IndexWriterConfig config = new IndexWriterConfig(new EnglishAnalyzer());
 //        IndexWriterConfig config = new IndexWriterConfig(new MyAnalyzer());
         config.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
         indexWriter = new IndexWriter(dir, config);

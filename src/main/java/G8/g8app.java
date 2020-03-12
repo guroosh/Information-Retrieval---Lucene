@@ -23,6 +23,7 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.document.Document;
 
 import org.apache.lucene.analysis.Analyzer;
+import org.apache.lucene.analysis.en.EnglishAnalyzer;
 
 public class g8app {
     private static String queryfield = "text";
@@ -141,7 +142,7 @@ public class g8app {
 
         Directory directory = null;
         DirectoryReader ireader = null;
-        Analyzer analyzer = new StandardAnalyzer();
+        Analyzer analyzer = new EnglishAnalyzer();
         // open index
         directory = FSDirectory.open(Paths.get(indexdir));
         ireader = DirectoryReader.open(directory);
