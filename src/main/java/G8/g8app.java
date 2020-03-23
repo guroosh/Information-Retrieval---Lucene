@@ -29,16 +29,24 @@ public class g8app {
     private static String queryfield = "text";
     private static int MAX_RESULTS = 1000;
 
-    private g8app() {
+    private static String queries = null;
+    private static String savequery = null;
+    private static String stop_dir = null;
+    private static String output_file = null;
+
+    public g8app() {}
+
+    /* Constructor with parameters */
+    public g8app(final String queries, final String savequery, final String stop_dir, final String output_file) {
+        g8app.queries = queries;
+        g8app.savequery = savequery;
+        g8app.stop_dir = stop_dir;
+        g8app.output_file = output_file;
     }
 
     public static void main(String[] args) throws IOException {
         // ../Files path of the same folder present in our repository
 
-        String queries = null;
-        String savequery = null;
-        String stop_dir = null;
-        String output_file = null;
         String usage = "[-queries QUERY_FILE_PATH] [-savequery PATH_TO_SAVE_NEW_QUERY_FILE] [-stopdir STOPWORDS_FILE_PATH] [-ouput output_file]";
         for (int i = 0; i < args.length; i++) {
             if ("-query".equals(args[i])) {
@@ -64,11 +72,11 @@ public class g8app {
         /*
          * SAMPLE ARGUMENTS String queries = "../Files/topics" String savequery =
          * "../Files/" String stop_dir = "../Files/stopwords.txt"
-         * 
+         *
          * -query ../Desktop/IdeaProjects/IRG8/Files/topics/ -savequery
          * ../Desktop/IdeaProjects/IRG8/Files/
          * -stopdir../Desktop/IdeaProjects/IRG8/Files/stopwords.txt
-         * 
+         *
          */
 
         String mod1 = savequery + "filename.txt";
@@ -100,7 +108,6 @@ public class g8app {
             e.printStackTrace();
             System.out.println("fail to query");
         }
-
     }
 
     /*
