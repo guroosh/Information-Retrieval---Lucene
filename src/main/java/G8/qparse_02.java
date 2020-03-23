@@ -49,15 +49,15 @@ public class qparse_02 {
                 if (line2.startsWith("<desc>")) {
                     line2 = in3.readLine();
                     line2 = line2.toLowerCase();
-                    line2=line2.replaceAll("u.s.","USA");
+                    line2=line2.replaceAll("u\\.s\\.","USA123");
                     descLine = line2;
                     descLine = descLine.trim();
                 } else if (line2.startsWith("<narr>")) {
                     line2 = in3.readLine();
                     line2 = line2.toLowerCase();
-                    line2=line2.replace("i.e.,", "");
-                    line2=line2.replaceAll("u.s.","USA");
-                    line2=line2.replace("e.g.,","");
+                    line2=line2.replaceAll("i\\.e\\.,", "");
+                    line2=line2.replaceAll("u\\.s\\.","USA123");
+                    line2=line2.replaceAll("e\\.g\\.,","");
                     narrLine = "";
                     split_length = line2.split(";|\\.|, but").length;
                     for (int i = 0; i <= split_length - 1; i++) {
@@ -73,6 +73,7 @@ public class qparse_02 {
                     tempLine = descLine + " " + narrLine;
                     tempLine = tempLine.toLowerCase();
                     tempLine = rem_stop_word(tempLine);
+                    tempLine = tempLine.replaceAll("usa123","U.S.");
                     tempLine = tempLine.trim().replaceAll(" +", " ");
                     wrt.println("<query>\n" + tempLine);
                 } else {

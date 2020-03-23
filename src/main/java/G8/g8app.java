@@ -39,7 +39,7 @@ public class g8app {
         String savequery = null;
         String stop_dir = null;
         String output_file = null;
-        String usage = "[-queries QUERY_FILE_PATH] [-savequery PATH_TO_SAVE_NEW_QUERY_FILE] [-stopdir STOPWORDS_FILE_PATH] [-ouput output_file]";
+        String usage = "[-queries QUERY_FILE_PATH] [-savequery PATH_TO_SAVE_NEW_QUERY_FILE] [-stopdir STOPWORDS_FILE_PATH] [-output output_file]";
         for (int i = 0; i < args.length; i++) {
             if ("-query".equals(args[i])) {
                 queries = args[i + 1];

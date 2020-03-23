@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="29087573-7e92-4934-9c47-7efef43076e4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/final_query.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/G8/g8app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/G8/g8app.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/G8/qparse_01.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/G8/qparse_01.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/G8/qparse_02.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/G8/qparse_02.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/final_query.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/final_query.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/stopwords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/stopwords.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/G8/g8app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/G8/g8app.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/G8/qparse_02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/G8/qparse_02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testFile.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +62,7 @@
     <configuration name="g8app" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="G8.g8app" />
       <module name="IRG8" />
-      <option name="PROGRAM_PARAMETERS" value="-query $PROJECT_DIR$/Files/topics -savequery $PROJECT_DIR$/Files/ -stopdir $PROJECT_DIR$/Files/stopwords.txt" />
+      <option name="PROGRAM_PARAMETERS" value="-query $PROJECT_DIR$/Files/topics -savequery $PROJECT_DIR$/Files/ -stopdir $PROJECT_DIR$/Files/stopwords.txt -output $PROJECT_DIR$/Files/output.txt" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="G8.*" />
@@ -135,38 +136,42 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="237" y="333" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1583874289949" />
-    <state x="0" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583953206594">
+    <state x="0" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584968241445">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="0" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1583953206594" />
+    <state x="0" y="222" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1584968241445" />
     <state x="584" y="295" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1583787263910">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="584" y="295" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1583787263910" />
-    <state width="1750" height="325" key="GridCell.Tab.0.bottom" timestamp="1583958266130">
-      <screen x="0" y="23" width="1792" height="1032" />
+    <state width="1750" height="194" key="GridCell.Tab.0.bottom" timestamp="1584968244946">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1523" height="392" key="GridCell.Tab.0.bottom/0.0.1792.1120/-417.-1440.2560.1440@-417.-1440.2560.1440" timestamp="1583868528414" />
-    <state width="1750" height="325" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1583958020518" />
+    <state width="1750" height="194" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1584968244946" />
+    <state width="1750" height="194" key="GridCell.Tab.0.bottom/0.23.1792.1029@0.23.1792.1029" timestamp="1584967166376" />
     <state width="1750" height="325" key="GridCell.Tab.0.bottom/0.23.1792.1032@0.23.1792.1032" timestamp="1583958266130" />
-    <state width="1750" height="325" key="GridCell.Tab.0.center" timestamp="1583958266128">
-      <screen x="0" y="23" width="1792" height="1032" />
+    <state width="1750" height="194" key="GridCell.Tab.0.center" timestamp="1584968244945">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1523" height="392" key="GridCell.Tab.0.center/0.0.1792.1120/-417.-1440.2560.1440@-417.-1440.2560.1440" timestamp="1583868528411" />
-    <state width="1750" height="325" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1583958020517" />
+    <state width="1750" height="194" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1584968244945" />
+    <state width="1750" height="194" key="GridCell.Tab.0.center/0.23.1792.1029@0.23.1792.1029" timestamp="1584967166374" />
     <state width="1750" height="325" key="GridCell.Tab.0.center/0.23.1792.1032@0.23.1792.1032" timestamp="1583958266128" />
-    <state width="1750" height="325" key="GridCell.Tab.0.left" timestamp="1583958266126">
-      <screen x="0" y="23" width="1792" height="1032" />
+    <state width="1750" height="194" key="GridCell.Tab.0.left" timestamp="1584968244944">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1523" height="392" key="GridCell.Tab.0.left/0.0.1792.1120/-417.-1440.2560.1440@-417.-1440.2560.1440" timestamp="1583868528409" />
-    <state width="1750" height="325" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1583958020516" />
+    <state width="1750" height="194" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1584968244944" />
     <state width="1750" height="325" key="GridCell.Tab.0.left/0.0.1792.1120@0.23.1792.1032" timestamp="1583958266126" />
+    <state width="1750" height="194" key="GridCell.Tab.0.left/0.23.1792.1029@0.23.1792.1029" timestamp="1584967166374" />
     <state width="1750" height="325" key="GridCell.Tab.0.left/0.23.1792.1032@0.23.1792.1032" timestamp="1583954429965" />
-    <state width="1750" height="325" key="GridCell.Tab.0.right" timestamp="1583958266129">
-      <screen x="0" y="23" width="1792" height="1032" />
+    <state width="1750" height="194" key="GridCell.Tab.0.right" timestamp="1584968244945">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1523" height="392" key="GridCell.Tab.0.right/0.0.1792.1120/-417.-1440.2560.1440@-417.-1440.2560.1440" timestamp="1583868528413" />
-    <state width="1750" height="325" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1583958020517" />
+    <state width="1750" height="194" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1584968244945" />
+    <state width="1750" height="194" key="GridCell.Tab.0.right/0.23.1792.1029@0.23.1792.1029" timestamp="1584967166375" />
     <state width="1750" height="325" key="GridCell.Tab.0.right/0.23.1792.1032@0.23.1792.1032" timestamp="1583958266129" />
     <state width="1398" height="391" key="GridCell.Tab.1.bottom" timestamp="1583878222381">
       <screen x="0" y="0" width="1792" height="1120" />
@@ -188,10 +193,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="384" y="141" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1583787567655" />
-    <state x="573" y="384" key="com.intellij.ide.util.TipDialog" timestamp="1583947250171">
-      <screen x="0" y="23" width="1792" height="1032" />
+    <state x="573" y="392" key="com.intellij.ide.util.TipDialog" timestamp="1584964726278">
+      <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="573" y="392" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1583936709130" />
+    <state x="573" y="392" key="com.intellij.ide.util.TipDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1584964726278" />
     <state x="573" y="384" key="com.intellij.ide.util.TipDialog/0.23.1792.1032@0.23.1792.1032" timestamp="1583947250171" />
     <state x="477" y="147" width="837" height="825" key="find.popup" timestamp="1583786648775">
       <screen x="0" y="0" width="1792" height="1120" />
@@ -201,6 +206,11 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="273" y="257" key="new project wizard/0.0.1792.1120@0.0.1792.1120" timestamp="1583770352561" />
+    <state x="561" y="265" key="run.anything.popup" timestamp="1584968480272">
+      <screen x="0" y="23" width="1792" height="1029" />
+    </state>
+    <state x="561" y="265" key="run.anything.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1584366063869" />
+    <state x="561" y="265" key="run.anything.popup/0.23.1792.1029@0.23.1792.1029" timestamp="1584968480272" />
     <state x="313" y="257" width="670" height="526" key="search.everywhere.popup" timestamp="1583953349800">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
