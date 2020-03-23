@@ -1,4 +1,5 @@
 package G8;
+
 import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
@@ -10,7 +11,7 @@ class TestSuite {
 
     /** Executes a full test run and generates output file.
      *  Mainly added for convenience to run it from IDE.
-     @author Stefan Spirkl <spirkl@logos-gmbh.com>
+     *  @author Stefan Spirkl <spirkl@logos-gmbh.com>
      */
     @Test
     private void buildAndMeasureMAP() throws IOException {

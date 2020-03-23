@@ -149,7 +149,7 @@ public class g8app {
 
         Directory directory = null;
         DirectoryReader ireader = null;
-        Analyzer analyzer = new EnglishAnalyzer();
+        Analyzer analyzer = new EnhancedCustomAnalyzer();
         // open index
         directory = FSDirectory.open(Paths.get(indexdir));
         ireader = DirectoryReader.open(directory);
