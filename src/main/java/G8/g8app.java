@@ -2,6 +2,7 @@ package G8;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.util.HashMap;
 
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.index.DirectoryReader;
+import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
@@ -88,12 +90,13 @@ public class g8app {
         out3.close();
         System.out.println("Final Parsing Done.");
 
-        try {
+        /*try {
             Indexer.buildAllIndex();
         } catch (Exception e) {
             System.out.println("fail to build index");
             e.printStackTrace();
-        }
+        }*/
+
         try {
             query("./index", savequery + "final_query.txt", output_file);
         } catch (Exception e) {
@@ -107,6 +110,14 @@ public class g8app {
      * parseQueries parse all the queries into an arraylist, assuming: query file
      * only contains num and query, and query string only has one line content
      */
+
+    public static String[] getFields() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(new File("fields.txt")));
+        String[] res = br.readLine().split(",");
+        br.close();
+        return res;
+    }
+
     public static ArrayList<HashMap<String, String>> parseQueries(String parsedQuery) throws IOException {
         ArrayList<HashMap<String, String>> res = new ArrayList<HashMap<String, String>>();
         File f = new File(parsedQuery);
@@ -154,7 +165,10 @@ public class g8app {
 
         output = new FileWriter(outputfn);
 
-        QueryParser parser = new QueryParser(queryfield, analyzer);
+        // QueryParser parser = new QueryParser(queryfield, analyzer);
+        String[] fields = getFields();
+        System.out.println("all indexed fields:"+String.join(",", fields));
+        QueryParser parser = new MultiFieldQueryParser(fields, analyzer);
 
         for (HashMap<String, String> qr : queries) {
             String parseid = qr.get("<num>");
