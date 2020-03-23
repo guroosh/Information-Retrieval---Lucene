@@ -90,12 +90,12 @@ public class g8app {
         out3.close();
         System.out.println("Final Parsing Done.");
 
-        /*try {
+        try {
             Indexer.buildAllIndex();
         } catch (Exception e) {
             System.out.println("fail to build index");
             e.printStackTrace();
-        }*/
+        }
 
         try {
             query("./index", savequery + "final_query.txt", output_file);
@@ -168,7 +168,23 @@ public class g8app {
         // QueryParser parser = new QueryParser(queryfield, analyzer);
         String[] fields = getFields();
         System.out.println("all indexed fields:"+String.join(",", fields));
-        QueryParser parser = new MultiFieldQueryParser(fields, analyzer);
+        HashMap<String,Float> boosts = new HashMap<String,Float>();
+
+        for (String s: fields) {
+            boosts.put(s,2f);
+        }
+        boosts.put("TEXT",10f);
+        /*boosts.put("HEADER",10f);
+        boosts.put("HEADLINE",10f);
+        boosts.put("GRAPHIC",10f);
+        boosts.put("PROFILE",10f);
+        boosts.put("SUBJECT",10f);
+        boosts.put("H3",10f);
+        boosts.put("H4",10f);*/
+
+        System.out.println(boosts);
+        QueryParser parser = new MultiFieldQueryParser(fields, analyzer,boosts);
+        //QueryParser parser = new MultiFieldQueryParser(new String[]{"TEXT","HEADER","HEADLINE","GRAPHIC","PROFILE","SUBJECT","H3","H4"}, analyzer,boosts);
 
         for (HashMap<String, String> qr : queries) {
             String parseid = qr.get("<num>");
@@ -187,7 +203,7 @@ public class g8app {
             for (int i = 0; i < hits.length; i++) {
                 Document hitDoc = isearcher.doc(hits[i].doc);
                 // System.out.prioutputntln(i + ") " + hitDoc.get("id") + " " + hits[i].score);
-                output.write(parseid + " Q0 " + hitDoc.get("id") + " " + i + " " + hits[i].score + " STANDARD" + "\n");
+                output.write(parseid + " Q0 " + hitDoc.get("DOCNO") + " " + i + " " + hits[i].score + " STANDARD" + "\n");
             }
 
         }

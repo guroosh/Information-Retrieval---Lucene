@@ -43,18 +43,22 @@ public class Indexer {
             if (child.getNodeType() == Node.ELEMENT_NODE) {
                 Element e1 = (Element) child;
                 NodeList nodeList = e1.getElementsByTagName("*");
+                //NodeList nodeList = e1.getChildNodes();
                 org.apache.lucene.document.Document luceneDocument = new org.apache.lucene.document.Document();
                 for (int idx = 0; idx < nodeList.getLength(); idx++) {
                     // Get element
-                    Element element = (Element) nodeList.item(idx);
+                    Element element =  (Element)nodeList.item(idx);
                     String tagname = element.getNodeName();
-                    if (tagname == "P") {// skip P tag, because P is already included in its parent tag
+                    /*if (tagname == "P") {// skip P tag, because P is already included in its parent tag
+                        continue;
+                    }*/
+                    //System.out.println(tagname+"--"+element.getParentNode().getNodeName());
+                    if(element.getParentNode().getNodeName() != "DOC"){
                         continue;
                     }
-
                     String tagvalue = e1.getElementsByTagName(element.getNodeName()).item(0).getTextContent().trim();
                     luceneDocument.add(new TextField(tagname, tagvalue, Field.Store.YES));
-                    fields.put(tagname, "");
+                    fields.put(tagname, filename+e1.getElementsByTagName("DOCNO").item(0).getTextContent());
                 }
                 luceneDocument.add(new StringField("filename", filename, Field.Store.YES));
                 indexWriter.addDocument(luceneDocument);
@@ -173,6 +177,7 @@ public class Indexer {
         indexFBIS();
         fields.put("filename", "");// filename is a default field for all docs
         docfields.write(String.join(",", fields.keySet()));
+        
         docfields.close();
         bw.close();
         indexWriter.close();
