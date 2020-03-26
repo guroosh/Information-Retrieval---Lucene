@@ -1,11 +1,9 @@
 package G8;
 
+
 import org.junit.jupiter.api.Test;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-
 
 class TestSuite {
 
@@ -14,7 +12,7 @@ class TestSuite {
      *  @author Stefan Spirkl <spirkl@logos-gmbh.com>
      */
     @Test
-    private void buildAndMeasureMAP() throws IOException {
+    public void buildAndMeasureMAP() throws IOException {
         /* given */
         final String queries = "C:\\Users\\resistance\\Desktop\\IR2\\IR2\\Files\\topics";
         final String savequery ="C:\\Users\\resistance\\Desktop\\IR2\\IR2\\Files";

@@ -10,7 +10,21 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.apache.lucene.analysis.TokenStream;
+import org.apache.lucene.analysis.Tokenizer;
+import org.apache.lucene.analysis.core.FlattenGraphFilter;
+import org.apache.lucene.analysis.core.LowerCaseFilter;
+import org.apache.lucene.analysis.core.StopFilter;
+import org.apache.lucene.analysis.en.PorterStemFilter;
+import org.apache.lucene.analysis.miscellaneous.CapitalizationFilter;
+import org.apache.lucene.analysis.miscellaneous.TrimFilter;
+import org.apache.lucene.analysis.miscellaneous.WordDelimiterGraphFilter;
+import org.apache.lucene.analysis.snowball.SnowballFilter;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.analysis.standard.StandardFilter;
+import org.apache.lucene.analysis.standard.StandardTokenizer;
+import org.apache.lucene.analysis.synonym.SynonymGraphFilter;
+import org.apache.lucene.analysis.synonym.SynonymMap;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
@@ -24,6 +38,9 @@ import org.apache.lucene.document.Document;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
+import org.tartarus.snowball.ext.EnglishStemmer;
+
+import static org.apache.lucene.analysis.standard.StandardAnalyzer.ENGLISH_STOP_WORDS_SET;
 
 public class g8app {
     private static String queryfield = "text";
@@ -149,7 +166,7 @@ public class g8app {
 
         Directory directory = null;
         DirectoryReader ireader = null;
-        Analyzer analyzer = new EnhancedCustomAnalyzer();
+        Analyzer analyzer = getEnhancedCustomAnalyzer();
         // open index
         directory = FSDirectory.open(Paths.get(indexdir));
         ireader = DirectoryReader.open(directory);
@@ -186,6 +203,54 @@ public class g8app {
         }
         output.close();
         directory.close();
-
     }
+
+    /** Provides access to the source, a Reader Consumer and an instance of TokenFilter
+     *  @author Stefan Spirkl <spirkl@logos-gmbh.com>
+     */
+    static Analyzer getEnhancedCustomAnalyzer() {
+        return new EnglishAnalyzer();
+    }
+
+    /** Provides access to the source, a Reader Consumer and an instance of TokenFilter
+     *  @author Stefan Spirkl <spirkl@logos-gmbh.com>
+     */
+    static Analyzer getEnhancedCustomAnalyzer2() {
+        return new Analyzer() {
+            @Override
+            protected TokenStreamComponents createComponents(String s) {
+                System.out.println("createComponents called.");
+                final Tokenizer tokenizer = new StandardTokenizer();
+                TokenStream tokenStream = new StandardFilter(tokenizer);
+                tokenStream = new LowerCaseFilter(tokenStream);
+                tokenStream = new TrimFilter(tokenStream);
+                tokenStream = new FlattenGraphFilter(new WordDelimiterGraphFilter(tokenStream, WordDelimiterGraphFilter.SPLIT_ON_NUMERICS |
+                        WordDelimiterGraphFilter.GENERATE_WORD_PARTS | WordDelimiterGraphFilter.GENERATE_NUMBER_PARTS |
+                        WordDelimiterGraphFilter.PRESERVE_ORIGINAL , null));
+                //tokenStream = new FlattenGraphFilter(new SynonymGraphFilter(tokenStream, createSynonymMap(), true));
+                tokenStream = new StopFilter(tokenStream, ENGLISH_STOP_WORDS_SET);
+                tokenStream = new SnowballFilter(tokenStream, new EnglishStemmer());
+                return new TokenStreamComponents(tokenizer, tokenStream);
+            }
+        };
+    }
+
+    /** Provides access to the source, a Reader Consumer and an instance of TokenFilter
+     *  @author Stefan Spirkl <spirkl@logos-gmbh.com>
+     */
+    static Analyzer getEnhancedCustomAnalyzer3() {
+        return new Analyzer() {
+            @Override
+            protected TokenStreamComponents createComponents(String fieldName) {
+                final StandardTokenizer src = new StandardTokenizer();
+                TokenStream result = new StandardFilter(src);
+                result = new LowerCaseFilter(result);
+                result = new StopFilter(result,  StandardAnalyzer.STOP_WORDS_SET);
+                result = new PorterStemFilter(result);
+                result = new CapitalizationFilter(result);
+                return new TokenStreamComponents(src, result);
+            }
+        };
+    }
+
 }

@@ -6,5 +6,5 @@ import org.apache.lucene.analysis.custom.CustomAnalyzer;
 public interface CustomAnalyzerInterface {
 
     /* returns an instance of our custom analyzer */
-    Analyzer EnhancedCustomAnalzer();
+    //Analyzer EnhancedCustomAnalyzer();
 }
