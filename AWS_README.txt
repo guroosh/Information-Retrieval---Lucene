@@ -34,7 +34,7 @@ mvn exec:java -Dexec.mainClass="g8app.main" -Dexec.args= "[-query QUERY_FILE_PAT
 [-output]	Path to where the output search results to be saved at.
 
 
-Example (***THIS ONE WORKS AND PLEASE WAIT FOR A WHILE (TAKES AROUND 6 MINS), AS IT CREATES INDEX ***):
+Example (***THIS ONE WORKS AND PLEASE WAIT FOR A WHILE (-----TAKES AROUND 6 MINS-----), AS IT CREATES INDEX ***):
 
 ********************************************
 mvn exec:java -Dexec.mainClass="G8.g8app" -Dexec.args="-query Files/topics -savequery Files/ -stopdir Files/stopwords.txt -output Files/output.txt"
