@@ -42,7 +42,7 @@ mvn exec:java -Dexec.mainClass="G8.g8app" -Dexec.args="-query Files/topics -save
 
 TREC_EVAL
 
-4. Once you're done with generating the 'outputs.txt' file you are ready to compare with the TREC Eval file. To do that change the directory to the folder which contains the binary file of Trec Eval, as below.
+4. Once you're done with generating the 'output.txt' file you are ready to compare with the TREC Eval file. To do that change the directory to the folder which contains the binary file of Trec Eval, as below.
 
 ********************************************
 cd ~/CS7IS3/IR2/trec_eval-9.0.7
