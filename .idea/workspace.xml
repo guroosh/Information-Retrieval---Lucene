@@ -4,9 +4,20 @@
     <list default="true" id="29087573-7e92-4934-9c47-7efef43076e4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/final_query.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/final_query.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/output.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/stopwords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/stopwords.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fields.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fields.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/G8/g8app.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/G8/g8app.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/G8/qparse_02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/G8/qparse_02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/G8/queryparse1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/G8/queryparse1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/G8/queryparse2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/G8/queryparse2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/IRG8-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/IRG8-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/G8/Indexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/G8/Indexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/G8/g8app.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/G8/g8app.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/G8/qparse_01.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/G8/qparse_02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testFile.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +56,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="experimental" />
   </component>
-  <component name="RunManager" selected="Application.g8app">
+  <component name="RunManager" selected="Maven.IRG8 [clean]">
     <configuration name="Indexer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="G8.Indexer" />
       <module name="IRG8" />
@@ -73,8 +84,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="qparse_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="G8.qparse_01" />
+    <configuration name="queryparse1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="G8.queryparse1" />
       <module name="IRG8" />
       <extension name="coverage">
         <pattern>
@@ -86,8 +97,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="qparse_02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="G8.qparse_02" />
+    <configuration name="queryparse2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="G8.queryparse2" />
       <module name="IRG8" />
       <extension name="coverage">
         <pattern>
@@ -98,19 +109,46 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="IRG8 [clean]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Application.g8app" />
-      <item itemvalue="Application.qparse_01" />
-      <item itemvalue="Application.qparse_02" />
       <item itemvalue="Application.Indexer" />
+      <item itemvalue="Application.queryparse1" />
+      <item itemvalue="Application.queryparse2" />
+      <item itemvalue="Maven.IRG8 [clean]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Maven.IRG8 [clean]" />
         <item itemvalue="Application.g8app" />
         <item itemvalue="Application.Indexer" />
-        <item itemvalue="Application.qparse_02" />
-        <item itemvalue="Application.qparse_01" />
+        <item itemvalue="Application.queryparse2" />
+        <item itemvalue="Application.queryparse1" />
       </list>
     </recent_temporary>
   </component>
@@ -144,33 +182,33 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="584" y="295" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1583787263910" />
-    <state width="1750" height="194" key="GridCell.Tab.0.bottom" timestamp="1584968244946">
+    <state width="1750" height="177" key="GridCell.Tab.0.bottom" timestamp="1585821252925">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1523" height="392" key="GridCell.Tab.0.bottom/0.0.1792.1120/-417.-1440.2560.1440@-417.-1440.2560.1440" timestamp="1583868528414" />
-    <state width="1750" height="194" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1584968244946" />
+    <state width="1750" height="177" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1585821252925" />
     <state width="1750" height="194" key="GridCell.Tab.0.bottom/0.23.1792.1029@0.23.1792.1029" timestamp="1584967166376" />
     <state width="1750" height="325" key="GridCell.Tab.0.bottom/0.23.1792.1032@0.23.1792.1032" timestamp="1583958266130" />
-    <state width="1750" height="194" key="GridCell.Tab.0.center" timestamp="1584968244945">
+    <state width="1750" height="177" key="GridCell.Tab.0.center" timestamp="1585821252924">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1523" height="392" key="GridCell.Tab.0.center/0.0.1792.1120/-417.-1440.2560.1440@-417.-1440.2560.1440" timestamp="1583868528411" />
-    <state width="1750" height="194" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1584968244945" />
+    <state width="1750" height="177" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1585821252924" />
     <state width="1750" height="194" key="GridCell.Tab.0.center/0.23.1792.1029@0.23.1792.1029" timestamp="1584967166374" />
     <state width="1750" height="325" key="GridCell.Tab.0.center/0.23.1792.1032@0.23.1792.1032" timestamp="1583958266128" />
-    <state width="1750" height="194" key="GridCell.Tab.0.left" timestamp="1584968244944">
+    <state width="1750" height="177" key="GridCell.Tab.0.left" timestamp="1585821252923">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1523" height="392" key="GridCell.Tab.0.left/0.0.1792.1120/-417.-1440.2560.1440@-417.-1440.2560.1440" timestamp="1583868528409" />
-    <state width="1750" height="194" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1584968244944" />
+    <state width="1750" height="177" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1585821252923" />
     <state width="1750" height="325" key="GridCell.Tab.0.left/0.0.1792.1120@0.23.1792.1032" timestamp="1583958266126" />
     <state width="1750" height="194" key="GridCell.Tab.0.left/0.23.1792.1029@0.23.1792.1029" timestamp="1584967166374" />
     <state width="1750" height="325" key="GridCell.Tab.0.left/0.23.1792.1032@0.23.1792.1032" timestamp="1583954429965" />
-    <state width="1750" height="194" key="GridCell.Tab.0.right" timestamp="1584968244945">
+    <state width="1750" height="177" key="GridCell.Tab.0.right" timestamp="1585821252925">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state width="1523" height="392" key="GridCell.Tab.0.right/0.0.1792.1120/-417.-1440.2560.1440@-417.-1440.2560.1440" timestamp="1583868528413" />
-    <state width="1750" height="194" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1584968244945" />
+    <state width="1750" height="177" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1585821252925" />
     <state width="1750" height="194" key="GridCell.Tab.0.right/0.23.1792.1029@0.23.1792.1029" timestamp="1584967166375" />
     <state width="1750" height="325" key="GridCell.Tab.0.right/0.23.1792.1032@0.23.1792.1032" timestamp="1583958266129" />
     <state width="1398" height="391" key="GridCell.Tab.1.bottom" timestamp="1583878222381">
@@ -206,11 +244,11 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="273" y="257" key="new project wizard/0.0.1792.1120@0.0.1792.1120" timestamp="1583770352561" />
-    <state x="561" y="265" key="run.anything.popup" timestamp="1584968480272">
+    <state x="561" y="265" key="run.anything.popup" timestamp="1585821330263">
       <screen x="0" y="23" width="1792" height="1029" />
     </state>
     <state x="561" y="265" key="run.anything.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1584366063869" />
-    <state x="561" y="265" key="run.anything.popup/0.23.1792.1029@0.23.1792.1029" timestamp="1584968480272" />
+    <state x="561" y="265" key="run.anything.popup/0.23.1792.1029@0.23.1792.1029" timestamp="1585821330263" />
     <state x="313" y="257" width="670" height="526" key="search.everywhere.popup" timestamp="1583953349800">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>

@@ -14,8 +14,8 @@ import java.util.List;
 //import java.util.HashMap;
 
 
-public class qparse_02 {
-    public qparse_02() {}
+public class queryparse2 {
+    public queryparse2() {}
 
     public static List<String> stopwords;
     public static void loadStopwords(String stop_dir) throws IOException {

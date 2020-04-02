@@ -2,7 +2,6 @@ package G8;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,7 +10,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.ParseException;
@@ -80,13 +78,13 @@ public class g8app {
         PrintWriter out2 = new PrintWriter(mod2);
         PrintWriter out3 = new PrintWriter(savequery + "final_query.txt");
         // Notice the lack of / or \. Path must be given accordingly for 'savequery'.
-        qparse_01 init_parse = new qparse_01();
+        queryparse1 init_parse = new queryparse1();
         init_parse.firstParseQuery(queries, out);
         out.close();
         init_parse.secondParseQuery(mod1, out2);
         out2.close();
         System.out.println("Initial Parsing Done.");
-        qparse_02.thirdParseQuery(stop_dir, out3, mod2);
+        queryparse2.thirdParseQuery(stop_dir, out3, mod2);
         out3.close();
         System.out.println("Final Parsing Done.");
 

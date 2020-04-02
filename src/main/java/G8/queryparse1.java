@@ -28,9 +28,9 @@ import java.nio.file.Paths;
 //import java.util.Date;
 //import java.util.HashMap;
 
-public class qparse_01 {
+public class queryparse1 {
 
-    public qparse_01() {
+    public queryparse1() {
     }
 
     public void firstParseQuery(String queries, PrintWriter wrt) throws IOException {
