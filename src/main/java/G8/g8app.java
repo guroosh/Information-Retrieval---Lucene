@@ -17,7 +17,7 @@ import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
-import org.apache.lucene.search.similarities.BM25Similarity;
+import org.apache.lucene.search.similarities.*;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.document.Document;
@@ -39,7 +39,8 @@ public class g8app {
         String savequery = null;
         String stop_dir = null;
         String output_file = null;
-        String usage = "[-query QUERY_FILE_PATH] [-savequery PATH_TO_SAVE_NEW_QUERY_FILE] [-stopdir STOPWORDS_FILE_PATH] [-output output_file]";
+        String score_me = null;
+        String usage = "[-query QUERY_FILE_PATH] [-savequery PATH_TO_SAVE_NEW_QUERY_FILE] [-stopdir STOPWORDS_FILE_PATH] [-output output_file] [-score set_similarity]";
         for (int i = 0; i < args.length; i++) {
             if ("-query".equals(args[i])) {
                 queries = args[i + 1];
@@ -53,7 +54,15 @@ public class g8app {
             } else if ("-output".equals(args[i])) {
                 output_file = args[i + 1];
             }
+            else if ("-score".equals(args[i])) {
+                score_me=args[i+1];
+                i++;
+            }
 
+        }
+
+        if (score_me == null) {
+            score_me = "7";
         }
 
         if (queries == null || savequery == null || stop_dir == null || output_file == null) {
@@ -62,13 +71,17 @@ public class g8app {
         }
 
         /*
-         * SAMPLE ARGUMENTS String queries = "../Files/topics" String savequery =
-         * "../Files/" String stop_dir = "../Files/stopwords.txt"
+         * SAMPLE ARGUMENTS
+         * String queries = "../Files/topics"
+         * String savequery = "../Files/"
+         * String stop_dir = "../Files/stopwords.txt"
+         * String output = "../Files/output.txt"
          * 
-         * -query ../Desktop/IdeaProjects/IRG8/Files/topics/ -savequery
-         * ../Desktop/IdeaProjects/IRG8/Files/
-         * -stopdir../Desktop/IdeaProjects/IRG8/Files/stopwords.txt
-         * 
+         * -query ../Desktop/IdeaProjects/IRG8/Files/topics/
+         * -savequery ../Desktop/IdeaProjects/IRG8/Files/
+         * -stopdir ../Desktop/IdeaProjects/IRG8/Files/stopwords.txt
+         * -output ../Desktop/IdeaProjects/IRG8/Files/output.txt
+         * -score 1
          */
 
         String mod1 = savequery + "filename.txt";
@@ -96,7 +109,7 @@ public class g8app {
         }
 
         try {
-            query("./index", savequery + "final_query.txt", output_file);
+            query("./index", savequery + "final_query.txt", output_file, score_me);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("fail to query");
@@ -139,7 +152,7 @@ public class g8app {
         return res;
     }
 
-    public static void query(String indexdir, String parsedQuery, String outputfn) throws IOException, ParseException {
+    public static void query(String indexdir, String parsedQuery, String outputfn, String score_me) throws IOException, ParseException {
         ArrayList<HashMap<String, String>> queries = null;
         try {
             queries = parseQueries(parsedQuery);
@@ -156,8 +169,21 @@ public class g8app {
         directory = FSDirectory.open(Paths.get(indexdir));
         ireader = DirectoryReader.open(directory);
 
+        int setScore = 0;
+        setScore = Integer.parseInt(score_me);
+
         IndexSearcher isearcher = new IndexSearcher(ireader);
-        isearcher.setSimilarity(new BM25Similarity());
+
+        if(setScore == 0) isearcher.setSimilarity(new ClassicSimilarity());
+        if(setScore == 1) isearcher.setSimilarity(new BM25Similarity());
+        if(setScore == 2) isearcher.setSimilarity(new BooleanSimilarity());
+        if(setScore == 3) isearcher.setSimilarity(new LMDirichletSimilarity());
+        if(setScore == 4) isearcher.setSimilarity(new LMJelinekMercerSimilarity((float) 0.6));
+        if(setScore == 5) isearcher.setSimilarity(new AxiomaticF1EXP());
+        if(setScore == 6) isearcher.setSimilarity(new AxiomaticF1LOG());
+        if(setScore == 7) isearcher.setSimilarity(new AxiomaticF2EXP());
+        if(setScore == 8) isearcher.setSimilarity(new AxiomaticF2LOG());
+
 
         FileWriter output = null;
 
