@@ -159,7 +159,7 @@ public class Indexer {
         System.out.println("Deleting old index");
         deleteOldIndex();
         FSDirectory dir = FSDirectory.open(Paths.get("index/"));
-        IndexWriterConfig config = new IndexWriterConfig(new EnglishAnalyzer());
+        IndexWriterConfig config = new IndexWriterConfig(new CusAnalyzer());
         // IndexWriterConfig config = new IndexWriterConfig(new MyAnalyzer());
         config.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
         indexWriter = new IndexWriter(dir, config);
@@ -189,7 +189,7 @@ public class Indexer {
         System.out.println("Deleting old index");
         deleteOldIndex();
         FSDirectory dir = FSDirectory.open(Paths.get("index/"));
-        IndexWriterConfig config = new IndexWriterConfig(new EnglishAnalyzer());
+        IndexWriterConfig config = new IndexWriterConfig(new CusAnalyzer());
         // IndexWriterConfig config = new IndexWriterConfig(new MyAnalyzer());
         config.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
         indexWriter = new IndexWriter(dir, config);
