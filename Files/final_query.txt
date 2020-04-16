@@ -1,0 +1,200 @@
+<num>
+401
+<query>
+language cultural differences impede integration foreign minorities germany focus causes lack integration significant way
+<num>
+402
+<query>
+happening field behavioral genetics, study relative influence genetic environmental factors individual's behavior personality describing genetic environmental factors relating understanding preventing substance abuse addictions pertaining attention deficit disorders tied genetics also relevant, genetic disorders affecting hearing muscles genome project tied behavior disorders ( mood disorders, alzheimer's disease)
+<num>
+403
+<query>
+find information effects dietary intakes potassium, magnesium fruits vegetables determinants bone mineral density elderly men women thus preventing osteoporosis (bone decay) may include one dietary intakes prevention osteoporosis discussion disturbance nutrition mineral metabolism results decrease bone mass also
+<num>
+404
+<query>
+often peace talks ireland delayed disrupted result acts violence
+<num>
+405
+<query>
+unexpected unexplained cosmic events celestial phenomena, radiation supernova outbursts new comets, detected
+<num>
+406
+<query>
+done treat symptoms parkinson's disease keep patient functional long possible identifies drug treatment program utilized patient care provides indication success failure
+<num>
+407
+<query>
+impact poaching world's various wildlife preserves must discuss poaching wildlife preserves, wild also deemed evidence preventive measures taken local authorities
+<num>
+408
+<query>
+tropical storms (hurricanes typhoons) caused significant property damage loss life date storm, area affected, extent damage/casualties interest
+<num>
+409
+<query>
+legal actions resulted destruction pan flight 103 lockerbie, scotland, december 21, 1988 describing charges, claims, fines presented imposed court tribunal
+<num>
+410
+<query>
+involved schengen agreement eliminate border controls western europe hope accomplish information actions signatories schengen agreement as: measures eliminate border controls (removal traffic obstacles, lifting traffic restrictions) implementation information system data bank unified visa issuance procedures strengthening border controls external borders treaty area exchange free movement internal borders
+<num>
+411
+<query>
+find information shipwreck salvaging: recovery attempted recovery treasure sunken ships provide information actual locating recovery treasure technology makes possible discovery, location investigation wreckages suspected treasure disposition recovered treasure
+<num>
+412
+<query>
+security measures effect proposed go effect airports could identify specific airport describe security measures already effect proposed use airport items could also describe failure security cited contributing cause tragedy came pass later averted comparisons among airports based effectiveness security also
+<num>
+413
+<query>
+new methods producing steel discuss processes adapted entrepreneurs organized so-called "minimills" producing steel methods differ old blast furnace method production identify new companies, problems encountered, and/or successes failures national international markets also
+<num>
+414
+<query>
+much sugar cuba export countries import provide information regarding cuba's sugar trade
+<num>
+415
+<query>
+known drug trafficking "golden triangle", area burma, thailand laos meet discuss drug trafficking golden triangle, including organizations produce distribute drugs international efforts combat traffic quantities drugs produced area
+<num>
+416
+<query>
+status three gorges project provide projected date completion project, estimated total cost, estimated electrical output finished project
+<num>
+417
+<query>
+find ways measuring creativity items include definitions creativity, descriptions characteristics associated creativity, factors linked creativity
+<num>
+418
+<query>
+ways quilts used generate income mentioning quilting books, quilting classes, quilted objects, museum exhibits quilts discuss aids quilts irrelevant, unless specific mention quilts used fundraising
+<num>
+419
+<query>
+new uses developed old automobile tires means tire recycling must show advantageous uses recycled tires, as: destructive distillation scrap rubber valuable chemicals, reef building fish habitats, filler binder asphalt roadway mixes, burning controlled environment heat generation
+<num>
+420
+<query>
+widespread carbon monoxide poisoning global scale data carbon monoxide poisoning is, symptoms, causes, and/or prevention
+<num>
+421
+<query>
+disposal industrial waste accomplished industrial management throughout world discuss disposal, storage, management industrial waste---both standard hazardous---are
+<num>
+422
+<query>
+incidents stolen forged art instances stolen forged art media pirated software, music, movies, etc
+<num>
+423
+<query>
+find references milosevic's wife, mirjana markovic mention serbian president's wife relevant, even named may referred nickname, mira
+<num>
+424
+<query>
+give examples alleged suicides aroused suspicion death actually murder intent query find criminal murders disguised suicide assisted suicides done compassion would someone refers murder
+<num>
+425
+<query>
+counterfeiting money done modern times must cite actual instances counterfeiting
+<num>
+426
+<query>
+provide information use dogs worldwide law enforcement purposes items include specific information use dogs operation training dogs handlers also
+<num>
+427
+<query>
+find discuss damage ultraviolet (uv) light sun eyes discuss diseases result exposure eyes uv light, treatments damage, and/or education programs help prevent damage discussing treatment methods cataracts ocular melanoma even specific cause mentioned
+<num>
+428
+<query>
+countries U.S. china declining birth rate relevant, name country U.S. china birth rate fell rate previous year decline need occurred one preceding year
+<num>
+429
+<query>
+identify outbreaks legionnaires' disease relevant, must discuss specific outbreak legionnaires' disease
+<num>
+430
+<query>
+identify instances attacks humans africanized (killer) bees must cite specific instance human attacked killer bees
+<num>
+431
+<query>
+latest developments robotic technology information current applications robotic technology
+<num>
+432
+<query>
+police departments use "profiling" stop motorists report discuss police department criteria identifying motorists considered likely carrying contraband
+<num>
+433
+<query>
+contemporary interest greek philosophy stoicism actual references philosophy philosophers, productions greek stoic plays, new "stoic" artistic productions
+<num>
+434
+<query>
+state economy estonia give concrete economic information economic statistics, entering economic unions treaties, monetary performance relevant, discussions economic issues transportation pollution
+<num>
+435
+<query>
+measures taken worldwide countries effective curbing population growth must describe actual case population measures taken results known reduction measures must actively pursued
+<num>
+436
+<query>
+causes railway accidents throughout world provides data railway accidents sort ( locomotive, trolley, streetcar) either railroad system vehicle pedestrian involved caused accident
+<num>
+437
+<query>
+experience residential utility customers following deregulation gas electric
+<num>
+438
+<query>
+countries experiencing increase tourism name country experienced increase tourism increase must represent nation whole tourism general, restricted certain regions country specific type tourism ( adventure travel)
+<num>
+439
+<query>
+new inventions scientific discoveries made word "new" description defined occurring 1990s indicate "recent" invention scientific discovery considered
+<num>
+440
+<query>
+steps taken governments corporations eliminate abuse child labor identifies action taken either private commercial corporation governmental organization reduce eliminate use child labor manufacturing operations
+<num>
+441
+<query>
+prevent treat lyme disease discuss current prevention treatment techniques lyme disease reports research new treatments disease also
+<num>
+442
+<query>
+find accounts selfless heroic acts individuals small groups benefit others cause description specific acts
+<num>
+443
+<query>
+extent U.S. (government private) investment sub-saharan africa references U.S. governmental private assistance sub-saharan africa discussing contributions reason U.S. membership international aid organizations also
+<num>
+444
+<query>
+potential uses supercritical fluids environmental protection measure relevant, must indicate fluid involved achieved process pressurization producing supercritical fluid
+<num>
+445
+<query>
+countries besides united states considering approved women clergy persons relevant, must indicate either country woman installed clergy country considering installation clergy position must church pastor rather church capacity ( nun choir member)
+<num>
+446
+<query>
+tourists likely subjected acts violence causing bodily harm death must accounts known harm tourists
+<num>
+447
+<query>
+new developments applications stirling engine discussion new developments applications stirling engine (also known stirling cycle)
+<num>
+448
+<query>
+identify instances weather main contributing factor loss ship sea ship loss due weather relevant, either international coastal waters
+<num>
+449
+<query>
+caused current ineffectiveness antibiotics infections prognosis new drugs relevant, must discuss reasons causes ineffectiveness current antibiotics may also include efforts pharmaceutical companies federal government agencies find new cures, updating current testing phases, new drugs tested, prognosis availability new effective antibiotics
+<num>
+450
+<query>
+significant figure years late jordanian king hussein furthering peace middle east must include mention israel king hussein opposed jordanian officials discussion king's on-going, previous upcoming efforts efforts pertinent peace process, merely jordan's relationship middle-east countries U.S.
