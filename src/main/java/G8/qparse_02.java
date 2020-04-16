@@ -14,8 +14,8 @@ import java.util.List;
 //import java.util.HashMap;
 
 
-public class queryparse2 {
-    public queryparse2() {}
+public class qparse_02 {
+    public qparse_02() {}
 
     public static List<String> stopwords;
     public static void loadStopwords(String stop_dir) throws IOException {
@@ -49,15 +49,15 @@ public class queryparse2 {
                 if (line2.startsWith("<desc>")) {
                     line2 = in3.readLine();
                     line2 = line2.toLowerCase();
-                    line2=line2.replaceAll("u\\.s\\.","USA123");
+                    line2=line2.replaceAll("u.s.","USA");
                     descLine = line2;
                     descLine = descLine.trim();
                 } else if (line2.startsWith("<narr>")) {
                     line2 = in3.readLine();
                     line2 = line2.toLowerCase();
-                    line2=line2.replaceAll("i\\.e\\.,", "");
-                    line2=line2.replaceAll("u\\.s\\.","USA123");
-                    line2=line2.replaceAll("e\\.g\\.,","");
+                    line2=line2.replace("i.e.,", "");
+                    line2=line2.replaceAll("u.s.","USA");
+                    line2=line2.replace("e.g.,","");
                     narrLine = "";
                     split_length = line2.split(";|\\.|, but").length;
                     for (int i = 0; i <= split_length - 1; i++) {
@@ -73,7 +73,6 @@ public class queryparse2 {
                     tempLine = descLine + " " + narrLine;
                     tempLine = tempLine.toLowerCase();
                     tempLine = rem_stop_word(tempLine);
-                    tempLine = tempLine.replaceAll("usa123","U.S.");
                     tempLine = tempLine.trim().replaceAll(" +", " ");
                     wrt.println("<query>\n" + tempLine);
                 } else {
@@ -93,8 +92,8 @@ public class queryparse2 {
             if (!stopwords.contains(word)) {
                 builder.append(word);
                 if(word!=" "){
-                    builder.append(' ');
-                }}
+                builder.append(' ');
+            }}
         }
         String result = builder.toString().trim();
         return result;

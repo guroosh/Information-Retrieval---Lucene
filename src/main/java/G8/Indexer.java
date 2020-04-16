@@ -1,9 +1,7 @@
 package G8;
 
-import org.apache.lucene.analysis.Analyzer;
-//import org.apache.lucene.analysis.en.EnglishAnalyzer;
+import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.analysis.synonym.SynonymMap;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
@@ -34,7 +32,7 @@ public class Indexer {
     public static BufferedWriter docfields;
     private static HashMap<String,String> fields = new HashMap<String,String>(); // to store all
     // fields
-    public static SynonymMap synonymMapG = null;
+
 
     private static void indexDocs(Document doc,String filename)
             throws IOException, ParserConfigurationException, SAXException {
@@ -55,7 +53,7 @@ public class Indexer {
                         continue;
                     }*/
                     //System.out.println(tagname+"--"+element.getParentNode().getNodeName());
-                    if(!element.getParentNode().getNodeName().equals("DOC")){
+                    if(element.getParentNode().getNodeName() != "DOC"){
                         continue;
                     }
                     String tagvalue = e1.getElementsByTagName(element.getNodeName()).item(0).getTextContent().trim();
@@ -66,7 +64,7 @@ public class Indexer {
                 indexWriter.addDocument(luceneDocument);
             }
         }
-        
+
 
     }
 
@@ -161,9 +159,7 @@ public class Indexer {
         System.out.println("Deleting old index");
         deleteOldIndex();
         FSDirectory dir = FSDirectory.open(Paths.get("index/"));
-        Analyzer analyzer = new CustomEnglishAnalyzer();
-        IndexWriterConfig config = new IndexWriterConfig(analyzer);
-
+        IndexWriterConfig config = new IndexWriterConfig(new CustomEnglishAnalyzer());
         // IndexWriterConfig config = new IndexWriterConfig(new MyAnalyzer());
         config.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
         indexWriter = new IndexWriter(dir, config);
@@ -181,7 +177,7 @@ public class Indexer {
         indexFBIS();
         fields.put("filename", "");// filename is a default field for all docs
         docfields.write(String.join(",", fields.keySet()));
-        
+
         docfields.close();
         bw.close();
         indexWriter.close();

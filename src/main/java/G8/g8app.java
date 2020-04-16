@@ -17,14 +17,13 @@ import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
-import org.apache.lucene.search.similarities.AxiomaticF2EXP;
-import org.apache.lucene.search.similarities.BM25Similarity;
+import org.apache.lucene.search.similarities.*;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.document.Document;
 
 import org.apache.lucene.analysis.Analyzer;
-//import org.apache.lucene.analysis.en.EnglishAnalyzer;
+import org.apache.lucene.analysis.en.EnglishAnalyzer;
 
 public class g8app {
     private static String queryfield = "text";
@@ -40,7 +39,8 @@ public class g8app {
         String savequery = null;
         String stop_dir = null;
         String output_file = null;
-        String usage = "[-query QUERY_FILE_PATH] [-savequery PATH_TO_SAVE_NEW_QUERY_FILE] [-stopdir STOPWORDS_FILE_PATH] [-output output_file]";
+        String score_me = null;
+        String usage = "[-query QUERY_FILE_PATH] [-savequery PATH_TO_SAVE_NEW_QUERY_FILE] [-stopdir STOPWORDS_FILE_PATH] [-output output_file] [-score set_similarity]";
         for (int i = 0; i < args.length; i++) {
             if ("-query".equals(args[i])) {
                 queries = args[i + 1];
@@ -54,7 +54,15 @@ public class g8app {
             } else if ("-output".equals(args[i])) {
                 output_file = args[i + 1];
             }
+            else if ("-score".equals(args[i])) {
+                score_me=args[i+1];
+                i++;
+            }
 
+        }
+
+        if (score_me == null) {
+            score_me = "7";
         }
 
         if (queries == null || savequery == null || stop_dir == null || output_file == null) {
@@ -63,13 +71,17 @@ public class g8app {
         }
 
         /*
-         * SAMPLE ARGUMENTS String queries = "../Files/topics" String savequery =
-         * "../Files/" String stop_dir = "../Files/stopwords.txt"
+         * SAMPLE ARGUMENTS
+         * String queries = "../Files/topics"
+         * String savequery = "../Files/"
+         * String stop_dir = "../Files/stopwords.txt"
+         * String output = "../Files/output.txt"
          *
-         * -query ../Desktop/IdeaProjects/IRG8/Files/topics/ -savequery
-         * ../Desktop/IdeaProjects/IRG8/Files/
-         * -stopdir../Desktop/IdeaProjects/IRG8/Files/stopwords.txt
-         *
+         * -query ../Desktop/IdeaProjects/IRG8/Files/topics/
+         * -savequery ../Desktop/IdeaProjects/IRG8/Files/
+         * -stopdir ../Desktop/IdeaProjects/IRG8/Files/stopwords.txt
+         * -output ../Desktop/IdeaProjects/IRG8/Files/output.txt
+         * -score 1
          */
 
         String mod1 = savequery + "filename.txt";
@@ -97,7 +109,7 @@ public class g8app {
         }
 
         try {
-            query("./index", savequery + "final_query.txt", output_file);
+            query("./index", savequery + "final_query.txt", output_file, score_me);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("fail to query");
@@ -140,7 +152,7 @@ public class g8app {
         return res;
     }
 
-    public static void query(String indexdir, String parsedQuery, String outputfn) throws IOException, ParseException {
+    public static void query(String indexdir, String parsedQuery, String outputfn, String score_me) throws IOException, ParseException {
         ArrayList<HashMap<String, String>> queries = null;
         try {
             queries = parseQueries(parsedQuery);
@@ -157,9 +169,21 @@ public class g8app {
         directory = FSDirectory.open(Paths.get(indexdir));
         ireader = DirectoryReader.open(directory);
 
+        int setScore = 0;
+        setScore = Integer.parseInt(score_me);
+
         IndexSearcher isearcher = new IndexSearcher(ireader);
-//        isearcher.setSimilarity(new BM25Similarity());
-        isearcher.setSimilarity(new AxiomaticF2EXP());
+
+        if(setScore == 0) isearcher.setSimilarity(new ClassicSimilarity());
+        if(setScore == 1) isearcher.setSimilarity(new BM25Similarity());
+        if(setScore == 2) isearcher.setSimilarity(new BooleanSimilarity());
+        if(setScore == 3) isearcher.setSimilarity(new LMDirichletSimilarity());
+        if(setScore == 4) isearcher.setSimilarity(new LMJelinekMercerSimilarity((float) 0.6));
+        if(setScore == 5) isearcher.setSimilarity(new AxiomaticF1EXP());
+        if(setScore == 6) isearcher.setSimilarity(new AxiomaticF1LOG());
+        if(setScore == 7) isearcher.setSimilarity(new AxiomaticF2EXP());
+        if(setScore == 8) isearcher.setSimilarity(new AxiomaticF2LOG());
+
 
         FileWriter output = null;
 
@@ -167,13 +191,13 @@ public class g8app {
 
         // QueryParser parser = new QueryParser(queryfield, analyzer);
         String[] fields = getFields();
-        System.out.println("all indexed fields:" + String.join(",", fields));
-        HashMap<String, Float> boosts = new HashMap<String, Float>();
+        System.out.println("all indexed fields:"+String.join(",", fields));
+        HashMap<String,Float> boosts = new HashMap<String,Float>();
 
-        for (String s : fields) {
-            boosts.put(s, 2f);
+        for (String s: fields) {
+            boosts.put(s,2f);
         }
-        boosts.put("TEXT", 10f);
+        boosts.put("TEXT",10f);
         /*boosts.put("HEADER",10f);
         boosts.put("HEADLINE",10f);
         boosts.put("GRAPHIC",10f);
@@ -183,14 +207,14 @@ public class g8app {
         boosts.put("H4",10f);*/
 
         System.out.println(boosts);
-        QueryParser parser = new MultiFieldQueryParser(fields, analyzer, boosts);
+        QueryParser parser = new MultiFieldQueryParser(fields, analyzer,boosts);
         //QueryParser parser = new MultiFieldQueryParser(new String[]{"TEXT","HEADER","HEADLINE","GRAPHIC","PROFILE","SUBJECT","H3","H4"}, analyzer,boosts);
 
         for (HashMap<String, String> qr : queries) {
             String parseid = qr.get("<num>");
             String parsetext = qr.get("<query>");
             if (parsetext == null || parseid == null) {
-                System.out.println("ERROR: fail to get parse text " + parsetext + " " + parseid);
+                System.out.printf("ERROR: fail to get parse text %v %v", parsetext, parseid);
                 continue;
             }
             parsetext = QueryParser.escape(parsetext);
@@ -212,6 +236,3 @@ public class g8app {
 
     }
 }
-
-
-// -query C:/Users/guroosh/Desktop/github/IR2/Files/topics -savequery C:/Users/guroosh/Desktop/github/IR2/Files/ -stopdir C:/Users/guroosh/Desktop/github/IR2/Files/stopwords.txt -output C:/Users/guroosh/Desktop/github/IR2/Files/output.txt
