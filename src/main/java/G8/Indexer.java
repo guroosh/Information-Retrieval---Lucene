@@ -3,6 +3,7 @@ package G8;
 import org.apache.lucene.analysis.Analyzer;
 //import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.analysis.synonym.SynonymMap;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
@@ -33,7 +34,7 @@ public class Indexer {
     public static BufferedWriter docfields;
     private static HashMap<String,String> fields = new HashMap<String,String>(); // to store all
     // fields
-    
+    public static SynonymMap synonymMapG = null;
 
     private static void indexDocs(Document doc,String filename)
             throws IOException, ParserConfigurationException, SAXException {
@@ -54,7 +55,7 @@ public class Indexer {
                         continue;
                     }*/
                     //System.out.println(tagname+"--"+element.getParentNode().getNodeName());
-                    if(element.getParentNode().getNodeName() != "DOC"){
+                    if(!element.getParentNode().getNodeName().equals("DOC")){
                         continue;
                     }
                     String tagvalue = e1.getElementsByTagName(element.getNodeName()).item(0).getTextContent().trim();

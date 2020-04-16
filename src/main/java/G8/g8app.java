@@ -17,6 +17,7 @@ import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.search.similarities.AxiomaticF2EXP;
 import org.apache.lucene.search.similarities.BM25Similarity;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
@@ -157,7 +158,8 @@ public class g8app {
         ireader = DirectoryReader.open(directory);
 
         IndexSearcher isearcher = new IndexSearcher(ireader);
-        isearcher.setSimilarity(new BM25Similarity());
+//        isearcher.setSimilarity(new BM25Similarity());
+        isearcher.setSimilarity(new AxiomaticF2EXP());
 
         FileWriter output = null;
 
