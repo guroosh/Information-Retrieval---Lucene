@@ -6,9 +6,9 @@
 
 This project uses Intellij Workspace with Maven configured and Travis-CI.
 
-A text search engine based on Apache Lucene was planned, implemented and iteratively improved over the course of several months. The final version of our search engine achieved a mean average precision score of 0.2969 with the first set of partial qrel file.
+A text search engine based on Apache Lucene was planned, implemented and iteratively improved over the course of several months. The final version of our search engine achieved a mean average precision score of 0.2969 with the first set of partial QRel file.
 
-The text collection trec-45 was used which documents from the Financial Times Limited (1991, 1992, 1993, 1994), the Federal Register (1994), the Foreign Broadcast Information Service (1996) and the Los Angeles Times (1989, 1990). Most of the documents were news articles.
+The text collection trec-45 was used which documents from the Financial Times Limited (1991, 1992, 1993, 1994), the Federal Register (1994), the Foreign Broadcast Information Service (1996) and the Los Angeles Times (1989, 1990). Most of the documents are news articles.
 
 ### Final Output of Partial QRel
 
