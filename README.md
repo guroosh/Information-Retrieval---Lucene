@@ -49,18 +49,18 @@ mvn exec:java -Dexec.mainClass="g8app.main" -Dexec.args= "[-query QUERY_FILE_PAT
 
 ##### ```[-score]``` Parameter Values
 - 0 for ClassicSimilarity
-- 1 for BM25Similarity (Submission 02)
+- 1 for BM25Similarity
 - 2 for BooleanSimilarity
 - 3 for LMDirichletSimilarity
 - 4 for LMJelinekMercerSimilarity (Lambda=0.6)
 - 5 for AxiomaticF1Exp
 - 6 for AxiomaticF1Log
-- 7 for AxiomaticF2Exp (Submission 01- Best MAP Score)
+- 7 for AxiomaticF2Exp
 - 8 for AxiomaticF2Log
 
 ## Evaluating the Output (TREC Eval)
 
-Once you're done with generating the ```output.txt``` file you are ready to compare with the TREC Eval file. 
+Once you're done with generating the ```output.txt``` file you are ready to compare with the TREC Eval file.
 
 1. Change the directory to the folder which contains the binary file of Trec Eval.
 
