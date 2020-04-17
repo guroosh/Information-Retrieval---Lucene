@@ -64,12 +64,18 @@ Once you're done with generating the ```output.txt``` file you are ready to comp
 
 1. Change the directory to the folder which contains the binary file of Trec Eval.
 
-```cd ~/../Lucene-Information-Retrieval-2/trec_eval-9.0.7```
+```
+cd ~/../Lucene-Information-Retrieval-2/trec_eval-9.0.7
+```
 
 2. ```make``` to get an executable for TREC Eval.
 
-```make```
+```
+make
+```
 
 3. Now run the TREC_EVAL against your output.
 
-```./trec_eval ~/../Lucene-Information-Retrieval-2/Files/qrels.assignment2.part1 ~/../Lucene-Information-Retrieval-2/Files/output.txt```
+```
+./trec_eval ~/../Lucene-Information-Retrieval-2/Files/qrels.assignment2.part1 ~/../Lucene-Information-Retrieval-2/Files/output.txt
+```
