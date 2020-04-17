@@ -5,7 +5,7 @@ README file for the Lucene Program.
 
 SSH COMMAND
 ********************************************
-ssh -i cs7is3.pem ubuntu@ec2-54-80-207-16.compute-1.amazonaws.com
+ssh -i cs7is3.pem ubuntu@ec2-54-164-216-81.compute-1.amazonaws.com
 ********************************************
 
 The maven project has been deployed.
@@ -32,12 +32,28 @@ mvn exec:java -Dexec.mainClass="g8app.main" -Dexec.args= "[-query QUERY_FILE_PAT
 [-savequery]	Path to save the parsed and processed query file.
 [-stopdir] 	Path to the "stopwords.txt" file.
 [-output]	Path to where the output search results to be saved at.
+[-score]	Score determines the which Similarity Index you want to use.
 
+		0 for ClassicSimilarity
+		1 for BM25Similarity (Submission 02)
+		2 for BooleanSimilarity
+		3 for LMDirichletSimilarity
+		4 for LMJelinekMercerSimilarity (Lambda=0.6)
+		5 for AxiomaticF1Exp
+		6 for AxiomaticF1Log
+		7 for AxiomaticF2Exp (Submission 01- Best MAP Score)
+		8 for AxiomaticF2Log
 
-Example (***THIS ONE WORKS AND PLEASE WAIT FOR A WHILE (-----TAKES AROUND 6 MINS-----), AS IT CREATES INDEX ***):
+(***THIS ONE WORKS AND PLEASE WAIT FOR A WHILE (-----TAKES AROUND 6 MINS-----), AS IT CREATES INDEX ***):
 
+SUBMISSION-01
 ********************************************
-mvn exec:java -Dexec.mainClass="G8.g8app" -Dexec.args="-query Files/topics -savequery Files/ -stopdir Files/stopwords.txt -output Files/output.txt"
+mvn exec:java -Dexec.mainClass="G8.g8app" -Dexec.args="-query Files/topics -savequery Files/ -stopdir Files/stopwords.txt -output Files/output.txt -score 7"
+********************************************
+
+SUBMISSION-02
+********************************************
+mvn exec:java -Dexec.mainClass="G8.g8app" -Dexec.args="-query Files/topics -savequery Files/ -stopdir Files/stopwords.txt -output Files/output.txt -score 1"
 ********************************************
 
 TREC_EVAL
