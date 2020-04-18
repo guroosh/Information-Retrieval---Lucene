@@ -1,8 +1,6 @@
 # Lucene-Information-Retrieval-2.0
 ## CS7IS3: Group Project
 ### A study on Lucene Search Engine for TREC-8 Retreival Task
-#### Group 8 for Information Retrieval.
-#### Team Name: You-Know-Who
 
 This project uses Intellij Workspace with Maven configured and Travis-CI.
 
